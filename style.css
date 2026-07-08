@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+:root {
+  --color-terminal-bg: #050505;
+  --color-terminal-green: #00ff41;
+  --color-terminal-green-dim: rgba(0, 255, 65, 0.2);
+  --color-terminal-cyan: #08f7fe;
+  --color-terminal-cyan-dim: rgba(8, 247, 254, 0.2);
+  --color-terminal-text: #e0e0e0;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+  background-color: var(--color-terminal-bg);
+  color: var(--color-terminal-text);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-terminal-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-terminal-green);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terminal-cyan);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #000;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #333;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terminal-green);
+}
+
+/* Typewriter Cursor */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.cursor {
+    display: inline-block;
+    width: 0.5em;
+    height: 1em;
+    background-color: var(--color-terminal-green);
+    animation: blink 0.8s infinite linear;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+/* Scroll Animations (Replica of framer-motion behavior) */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modal Animations */
+.modal-overlay {
+    transition: opacity 0.3s ease;
+}
+.modal-content {
+    transition: all 0.3s ease;
+    transform: scale(0.95) translateY(20px);
+    opacity: 0;
+}
+.modal-overlay.open .modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
