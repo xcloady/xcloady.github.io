@@ -22,7 +22,7 @@ function createSection(id, title, icon, contentClasses, contentHTML) {
     <section id="${id}" class="py-16 md:py-24 border-b border-[var(--color-terminal-green-dim)] scroll-animate">
       <div class="flex items-center mb-10">
         <i data-lucide="${icon}" class="text-[var(--color-terminal-green)] mr-3 w-7 h-7"></i>
-        <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-terminal-text)]">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--color-terminal-text)] break-all">
           <span class="text-[var(--color-terminal-green)]">./</span>${title}
         </h2>
       </div>
@@ -41,7 +41,7 @@ function openModal(title, description, image, contentHTML) {
             <button id="close-modal" class="absolute top-4 right-4 text-[var(--color-terminal-text)] hover:text-[var(--color-terminal-green)] transition-colors">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
-            <h3 class="text-2xl font-bold text-[var(--color-terminal-green)] mb-4 pr-8">&gt; ${title}</h3>
+            <h3 class="text-xl sm:text-2xl font-bold text-[var(--color-terminal-green)] mb-4 pr-8 break-words">&gt; ${title}</h3>
             ${description ? `<p class="mb-4 text-[var(--color-terminal-text)] font-bold">${description}</p>` : ''}
             ${image ? `
             <div class="relative aspect-video w-full overflow-hidden border border-[var(--color-terminal-green-dim)] mb-6">
@@ -158,7 +158,7 @@ function renderApp() {
       <p class="text-[var(--color-terminal-cyan)] mb-4 flex items-center text-lg">
         <i data-lucide="chevron-right" class="mr-2 w-5 h-5"></i> SISTEMA_INICIADO
       </p>
-      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-[var(--color-terminal-text)] drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-[var(--color-terminal-text)] drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] break-all">
         ${personalData.name.toUpperCase()}
       </h1>
       <div class="text-xl md:text-2xl text-[var(--color-terminal-green)] mb-8 h-20 md:h-12" id="hero-typewriter">
